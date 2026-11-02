@@ -114,6 +114,8 @@ a{color:#1F6FE0}a:hover{color:#0A1220}
 }
 @media (max-width: 560px){.cta-text{display:none}.cta-btn{width:44px;padding:0 !important;justify-content:center}}
 .pf-nav-cb:focus-visible ~ .pf-head .pf-burger{outline:2px solid #5AA2FF;outline-offset:2px}
+.credit:hover strong{text-decoration:underline}
+@media (max-width: 760px){.foot-bottom{padding-bottom:96px !important}}
 @media (prefers-reduced-motion: reduce){.pf-side,.pf-scrim,.nav-a::after{transition:none}}
 .lume-root{display:flex;flex-direction:column;align-items:flex-end;gap:12px;font-family:'Barlow',system-ui,sans-serif}
 .lume-panel{position:fixed;right:max(16px,env(safe-area-inset-right,0px));bottom:calc(88px + env(safe-area-inset-bottom,0px));z-index:60;width:min(380px,calc(100vw - 32px));height:min(560px,calc(100dvh - 120px));background:#FFFFFF;border-radius:14px;border:1px solid #DDE3EA;box-shadow:0 16px 40px rgba(6,12,22,.22);display:flex;flex-direction:column;overflow:hidden;animation:lumeIn .25s ease-out both}
@@ -1013,9 +1015,9 @@ button:focus-visible,a:focus-visible{outline:2px solid #5AA2FF;outline-offset:2p
 </div>
 </div>
 <div style="border-top: 1px solid #16253A">
-<div style="max-width: 1200px; margin: 0 auto; padding-left: clamp(16px, 4vw, 40px); padding-right: clamp(16px, 4vw, 40px); padding-top: 18px; padding-bottom: 18px; display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between; font-size: 14px">
+<div class="foot-bottom" style="max-width: 1200px; margin: 0 auto; padding-left: clamp(16px, 4vw, 40px); padding-right: clamp(16px, 4vw, 40px); padding-top: 22px; padding-bottom: 22px; display: flex; flex-direction: column; align-items: center; gap: 8px; text-align: center; font-size: 14px">
 <span>© 2026 Perform Soluções Elétricas e Climatização · [CNPJ]</span>
-<a href="https://nickgomes.com" style="color: #C9D6E5; text-decoration: none">Site feito por Nick Gomes</a>
+<a class="credit" href="https://sites.nickgomes.com" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 6px; min-height: 36px; color: #A3B4C8; text-decoration: none">Site feito por <strong style="color: #FFFFFF; font-weight: 600">Nick Gomes</strong><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"></path></svg></a>
 </div>
 </div>
 </footer>
