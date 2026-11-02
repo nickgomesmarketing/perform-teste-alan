@@ -141,6 +141,13 @@ a{color:#1F6FE0}a:hover{color:#0A1220}
 .lume-launch:hover{background:#13223A}
 button:focus-visible,a:focus-visible{outline:2px solid #5AA2FF;outline-offset:2px}
 @media (max-width:520px){.lume-launch-t{display:none}.lume-launch{padding:0 8px}}
+.lume-typing{display:inline-flex;gap:5px;align-items:center;padding:14px 16px !important}
+.lume-typing span{width:7px;height:7px;border-radius:50%;background:#8C99A8;animation:lumeDot 1s infinite ease-in-out}
+.lume-typing span:nth-child(2){animation-delay:.15s}.lume-typing span:nth-child(3){animation-delay:.3s}
+@keyframes lumeDot{0%,60%,100%{opacity:.35;transform:none}30%{opacity:1;transform:translateY(-3px)}}
+.lume-msg{animation:lumeMsg .25s ease-out both}
+@keyframes lumeMsg{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion: reduce){.lume-typing span,.lume-msg{animation:none}}
 </style>
 </head>
 <body>
@@ -414,7 +421,7 @@ button:focus-visible,a:focus-visible{outline:2px solid #5AA2FF;outline-offset:2p
 </li>
 <li class="flow-step" style="position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 22px">
 <div style="position: relative; flex-shrink: 0; width: 72px; height: 72px; border-radius: 50%; background: #0A1220; color: #5AA2FF; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 0 8px #F4F6F8"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3h7l4 4v14H7z"></path><path d="M14 3v4h4"></path><path d="M10 12h5M10 16h5"></path></svg><span aria-hidden="true" style="position: absolute; top: -4px; right: -6px; width: 28px; height: 28px; border-radius: 50%; background: #1F6FE0; color: #FFFFFF; font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 16px; display: flex; align-items: center; justify-content: center; border: 2px solid #F4F6F8">3</span></div>
-<div style="display: flex; flex-direction: column; gap: 8px; max-width: 16em"><span style="font-size: 13px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: #5B6673">Passo 3</span><h3 style="margin: 0; font-size: 21px; font-weight: 600; color: #121A25">Receba o orçamento grátis</h3><p style="margin: 0; font-size: 16px; line-height: 1.55; color: #4F5A66">Valor claro, sem surpresa. Aceitamos cartão e parcelamos.</p></div>
+<div style="display: flex; flex-direction: column; gap: 8px; max-width: 16em"><span style="font-size: 13px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: #5B6673">Passo 3</span><h3 style="margin: 0; font-size: 21px; font-weight: 600; color: #121A25">Receba o orçamento grátis</h3><p style="margin: 0; font-size: 16px; line-height: 1.55; color: #4F5A66">Valor claro, sem surpresa. Pix, dinheiro, débito ou crédito, com parcelamento.</p></div>
 </li>
 <li class="flow-step" style="position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 22px">
 <div style="position: relative; flex-shrink: 0; width: 72px; height: 72px; border-radius: 50%; background: #1F6FE0; color: #FFFFFF; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 0 8px #F4F6F8"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z"></path><path d="M8.5 12l2.5 2.5 4.5-5"></path></svg><span aria-hidden="true" style="position: absolute; top: -4px; right: -6px; width: 28px; height: 28px; border-radius: 50%; background: #0A1220; color: #FFFFFF; font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 16px; display: flex; align-items: center; justify-content: center; border: 2px solid #F4F6F8">4</span></div>
@@ -966,7 +973,7 @@ button:focus-visible,a:focus-visible{outline:2px solid #5AA2FF;outline-offset:2p
 </li>
 <li class="flow-step" style="position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 22px">
 <div style="position: relative; flex-shrink: 0; width: 72px; height: 72px; border-radius: 50%; background: #0A1220; color: #5AA2FF; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 0 8px #F4F6F8"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3h7l4 4v14H7z"></path><path d="M14 3v4h4"></path><path d="M10 12h5M10 16h5"></path></svg><span aria-hidden="true" style="position: absolute; top: -4px; right: -6px; width: 28px; height: 28px; border-radius: 50%; background: #1F6FE0; color: #FFFFFF; font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 16px; display: flex; align-items: center; justify-content: center; border: 2px solid #F4F6F8">3</span></div>
-<div style="display: flex; flex-direction: column; gap: 8px; max-width: 16em"><span style="font-size: 13px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: #5B6673">Passo 3</span><h3 style="margin: 0; font-size: 21px; font-weight: 600; color: #121A25">Receba o orçamento grátis</h3><p style="margin: 0; font-size: 16px; line-height: 1.55; color: #4F5A66">Valor claro, sem surpresa. Aceitamos cartão e parcelamos.</p></div>
+<div style="display: flex; flex-direction: column; gap: 8px; max-width: 16em"><span style="font-size: 13px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: #5B6673">Passo 3</span><h3 style="margin: 0; font-size: 21px; font-weight: 600; color: #121A25">Receba o orçamento grátis</h3><p style="margin: 0; font-size: 16px; line-height: 1.55; color: #4F5A66">Valor claro, sem surpresa. Pix, dinheiro, débito ou crédito, com parcelamento.</p></div>
 </li>
 <li class="flow-step" style="position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 22px">
 <div style="position: relative; flex-shrink: 0; width: 72px; height: 72px; border-radius: 50%; background: #1F6FE0; color: #FFFFFF; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 0 8px #F4F6F8"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z"></path><path d="M8.5 12l2.5 2.5 4.5-5"></path></svg><span aria-hidden="true" style="position: absolute; top: -4px; right: -6px; width: 28px; height: 28px; border-radius: 50%; background: #0A1220; color: #FFFFFF; font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 16px; display: flex; align-items: center; justify-content: center; border: 2px solid #F4F6F8">4</span></div>
@@ -1046,97 +1053,157 @@ button:focus-visible,a:focus-visible{outline:2px solid #5AA2FF;outline-offset:2p
   window.addEventListener('hashchange', show);
   show();
 })();
-(function () {
-  var ACCENT = '#1F6FE0', ACCENT_L = '#5AA2FF', INK = '#0A1220';
-  var root = document.getElementById('lume');
-  if (!root) return;
-
-  function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
-  function waLink(t) { return 'https://wa.me/5519991110483?text=' + encodeURIComponent(t); }
-
+/* Conversa do Lume — compartilhada entre o site e a prancheta do canvas.
+   step(state, option, waLink) -> { bot: [mensagens], opts: [opções], data } */
+var LUME = (function () {
   var catalog = {
     'Elétrica': ['Instalação elétrica residencial', 'Instalação elétrica comercial', 'Manutenção e reparos', 'Quadro de distribuição e disjuntores', 'Padrão de entrada de energia', 'Tomadas, chuveiros e iluminação', 'Aterramento', 'Carregador de carro elétrico'],
     'Ar-condicionado': ['Instalação de split', 'Infraestrutura para ar', 'Manutenção preventiva e limpeza', 'Higienização', 'Desinstalação e mudança de lugar', 'Contrato de manutenção (PMOC)'],
     'Iluminação': ['Luminárias, lustres e pendentes', 'Perfil de LED', 'Iluminação personalizada']
   };
+  var catIntro = {
+    'Elétrica': 'Elétrica é o nosso forte! Qual desses é o seu caso?',
+    'Ar-condicionado': 'Boa! Com esse calor, ar funcionando direitinho faz toda a diferença. Qual desses você precisa?',
+    'Iluminação': 'Que legal! A luz certa muda o ambiente inteiro. Qual desses você tem em mente?'
+  };
   var faqs = [
-    ['O orçamento é pago?', 'Não. O orçamento é grátis e sem compromisso. Se você mandar uma foto do local pelo WhatsApp, ele sai ainda mais rápido.'],
-    ['Quanto custa o serviço?', 'Depende do serviço e do local, por isso não passamos preço fechado sem entender o caso. Faça o pedido por aqui que o Alan te responde com o valor.'],
-    ['Vocês dão garantia e nota fiscal?', 'Sim. Todo serviço tem garantia e emitimos nota fiscal.'],
-    ['Quais as formas de pagamento?', 'Aceitamos cartão e parcelamos. Para outras formas, é só perguntar no WhatsApp.'],
-    ['Quais cidades vocês atendem?', 'Americana, Santa Bárbara d’Oeste, Nova Odessa, Sumaré, Hortolândia e Campinas. Se for outra cidade da região, consulte a gente.'],
-    ['Qual o horário de atendimento?', 'Das 8h30 às 17h, e também conforme a necessidade do cliente. Emergências, atendemos 24 horas.'],
-    ['Vocês são qualificados?', 'Sim. O Alan tem 15 anos de experiência, certificado NR-10 (segurança em instalações elétricas) e formação técnica pelo SENAI.'],
-    ['Atendem empresas e condomínios?', 'Sim. Atendemos casas, apartamentos, comércios, escritórios, clínicas e condomínios. Para empresas, também fazemos contrato de manutenção (PMOC).']
+    ['O orçamento é pago?', 'Não, o orçamento é grátis e sem compromisso! E se você mandar uma foto do local pelo WhatsApp, ele sai ainda mais rápido.'],
+    ['Quanto custa o serviço?', 'Depende do serviço e do local, por isso a gente prefere não chutar um valor sem entender o seu caso. Monta o pedido aqui comigo que o Alan te passa o valor certinho.'],
+    ['Vocês dão garantia e nota fiscal?', 'Sim! Todo serviço tem garantia e a gente emite nota fiscal. Pode ficar tranquilo.'],
+    ['Quais as formas de pagamento?', 'A gente facilita pra você: aceitamos Pix, dinheiro, cartão de débito e cartão de crédito, com opção de parcelar. Se precisar de outra forma, é só combinar com o Alan.'],
+    ['Quais cidades vocês atendem?', 'A gente atende Americana, Santa Bárbara d’Oeste, Nova Odessa, Sumaré, Hortolândia e Campinas. Mora em outra cidade da região? Chama a gente no WhatsApp que a gente vê se consegue chegar até você.'],
+    ['Qual o horário de atendimento?', 'O atendimento é das 8h30 às 17h, mas a gente se adapta à sua necessidade. E se for emergência, atendemos 24 horas.'],
+    ['Vocês são qualificados?', 'Pode confiar! O Alan tem 15 anos de experiência, certificado NR-10 (a norma de segurança de quem trabalha com eletricidade) e formação técnica pelo SENAI.'],
+    ['Atendem empresas e condomínios?', 'Atendemos sim! Casas, apartamentos, comércios, escritórios, clínicas e condomínios. Pra empresas, também fazemos o contrato de manutenção do ar-condicionado (PMOC).']
   ];
   var cities = ['Americana', 'Santa Bárbara d’Oeste', 'Nova Odessa', 'Sumaré', 'Hortolândia', 'Campinas', 'Outra cidade'];
-  var mainOpts = [{ label: 'Pedir orçamento', act: 'orc' }, { label: 'Tirar uma dúvida', act: 'faq' }, { label: 'É uma emergência', act: 'emerg' }];
+  var mainOpts = [{ label: 'Quero um orçamento', act: 'orc' }, { label: 'Tenho uma dúvida', act: 'faq' }, { label: 'É uma emergência', act: 'emerg' }];
+  var greeting = [
+    'Oi, tudo bem? Eu sou o Lume, o assistente virtual da Perform.',
+    'Tô aqui pra montar seu pedido de orçamento rapidinho ou tirar alguma dúvida. Me conta, o que você precisa hoje?'
+  ];
 
-  var state;
-  function fresh(open) {
-    state = {
-      open: open, data: {}, opts: mainOpts,
-      log: [
-        { who: 'bot', text: 'Oi! Eu sou o Lume, assistente da Perform.' },
-        { who: 'bot', text: 'Posso montar o seu pedido de orçamento ou tirar uma dúvida rápida. Como posso ajudar?' }
-      ]
-    };
-  }
-  fresh(false);
-
-  function choose(o) {
-    if (o.act === 'restart') { fresh(true); render(); return; }
-    var d = state.data, bot = [], opts = [];
-    function askCity() { bot.push('Em qual cidade é o serviço?'); opts = cities.map(function (c) { return { label: c, act: 'city', val: c }; }); }
+  function step(d, o, waLink) {
+    var bot = [], opts = [];
+    function askCity() {
+      bot.push('E em qual cidade vai ser o serviço?');
+      opts = cities.map(function (c) { return { label: c, act: 'city', val: c }; });
+    }
     switch (o.act) {
       case 'orc':
-        bot.push('Combinado! Qual é o tipo de serviço?');
+        bot.push('Ótimo, vamos lá! São só umas perguntinhas rápidas e eu já deixo tudo pronto pro Alan.');
+        bot.push('Qual tipo de serviço você precisa?');
         opts = Object.keys(catalog).map(function (c) { return { label: c, act: 'cat', val: c }; });
-        opts.push({ label: 'Outro serviço', act: 'cat', val: 'Outro' });
+        opts.push({ label: 'Outra coisa', act: 'cat', val: 'Outro' });
         break;
       case 'cat':
         d.cat = o.val;
-        if (o.val === 'Outro') { d.sub = 'Outro serviço (vou explicar na conversa)'; askCity(); }
-        else { bot.push('E qual desses?'); opts = catalog[o.val].map(function (x) { return { label: x, act: 'sub', val: x }; }); }
+        if (o.val === 'Outro') {
+          d.sub = 'Outro serviço (explico na conversa)';
+          bot.push('Tranquilo! Depois você explica com calma direto com o Alan.');
+          askCity();
+        } else {
+          bot.push(catIntro[o.val]);
+          opts = catalog[o.val].map(function (x) { return { label: x, act: 'sub', val: x }; });
+        }
         break;
-      case 'sub': d.sub = o.val; askCity(); break;
+      case 'sub':
+        d.sub = o.val;
+        bot.push('Perfeito, anotado!');
+        askCity();
+        break;
       case 'city':
         d.city = o.val;
-        if (o.val === 'Outra cidade') bot.push('Sem problema. Atendemos a região de Campinas: anoto aqui e o Alan confirma se chega até você.');
-        bot.push('Para quando você precisa?');
-        opts = ['Hoje (urgente)', 'Esta semana', 'Sem pressa, só orçando'].map(function (x) { return { label: x, act: 'when', val: x }; });
+        if (o.val === 'Outra cidade') bot.push('Sem problema! A gente atende a região de Campinas. Vou anotar aqui e o Alan te confirma se consegue chegar até você.');
+        else bot.push('Ótimo, ' + o.val + ' está dentro da nossa área de atendimento.');
+        bot.push('E pra quando você precisa?');
+        opts = ['O quanto antes', 'Nesta semana', 'Sem pressa, só orçando'].map(function (x) { return { label: x, act: 'when', val: x }; });
         break;
       case 'when':
         d.when = o.val;
-        bot.push('E é para qual tipo de local?');
+        bot.push(o.val === 'O quanto antes' ? 'Entendido, vou deixar isso bem claro no seu pedido.' : 'Combinado!');
+        bot.push('Última pergunta: o serviço é em qual tipo de local?');
         opts = ['Casa ou apartamento', 'Comércio ou loja', 'Escritório ou clínica', 'Condomínio'].map(function (x) { return { label: x, act: 'place', val: x }; });
         break;
       case 'place':
         d.place = o.val;
         var serv = d.cat === 'Outro' ? d.sub : d.cat + ' — ' + d.sub;
         var resumo = 'Serviço: ' + serv + '\nCidade: ' + d.city + '\nPrazo: ' + d.when + '\nLocal: ' + d.place;
-        bot.push('Pronto! Seu pedido ficou assim:\n\n' + resumo);
-        bot.push('Toque em enviar e a conversa abre no WhatsApp da Perform. Se puder, mande uma foto do local por lá: ajuda muito no orçamento.');
-        opts = [{ label: 'Enviar pedido no WhatsApp', href: waLink('Olá! Vim pelo site da Perform (assistente Lume) e quero um orçamento.\n\n' + resumo) }, { label: 'Recomeçar', act: 'restart' }];
+        bot.push('Prontinho! Olha como ficou o seu pedido:\n\n' + resumo);
+        bot.push('É só tocar no botão aqui embaixo que a conversa abre no WhatsApp, direto com o Alan. Se der, manda uma foto do local junto: ajuda muito a acertar o orçamento.');
+        opts = [
+          { label: 'Enviar pro Alan no WhatsApp', href: waLink('Olá, Alan! Vim pelo site da Perform e quero um orçamento.\n\n' + resumo) },
+          { label: 'Começar de novo', act: 'restart' }
+        ];
         break;
       case 'faq':
-        bot.push('Claro! Escolha a sua dúvida:');
+        bot.push('Claro, pode perguntar! Escolhe aqui a sua dúvida:');
         opts = faqs.map(function (f, i) { return { label: f[0], act: 'q', val: i }; });
         break;
       case 'q':
         bot.push(faqs[o.val][1]);
-        opts = [{ label: 'Outra dúvida', act: 'faq' }, { label: 'Pedir orçamento', act: 'orc' }, { label: 'Falar no WhatsApp', href: waLink('Olá! Vim pelo site da Perform e tenho uma dúvida.') }];
+        bot.push('Ficou alguma outra dúvida? Se quiser, também monto seu orçamento agora mesmo.');
+        opts = [
+          { label: 'Tenho outra dúvida', act: 'faq' },
+          { label: 'Quero um orçamento', act: 'orc' },
+          { label: 'Falar com o Alan', href: waLink('Olá, Alan! Vim pelo site da Perform e tenho uma dúvida.') }
+        ];
         break;
       case 'emerg':
-        bot.push('Se houver cheiro de queimado, faísca ou fio exposto: desligue o disjuntor geral, se for seguro, e mantenha distância.');
-        bot.push('Atendemos emergências 24 horas. Chame agora no WhatsApp:');
-        opts = [{ label: 'Chamar no WhatsApp agora', href: waLink('Olá, preciso de um atendimento de emergência.') }, { label: 'Voltar ao início', act: 'restart' }];
+        bot.push('Calma, a gente te ajuda!');
+        bot.push('Primeiro, sua segurança: se tiver cheiro de queimado, faísca ou fio exposto, desligue o disjuntor geral (só se for seguro) e mantenha distância.');
+        bot.push('A gente atende emergência 24 horas. Chama agora no WhatsApp:');
+        opts = [
+          { label: 'Chamar no WhatsApp agora', href: waLink('Olá, Alan! Preciso de um atendimento de emergência.') },
+          { label: 'Voltar ao início', act: 'restart' }
+        ];
         break;
     }
-    state.log = state.log.concat([{ who: 'me', text: o.label }]).concat(bot.map(function (t) { return { who: 'bot', text: t }; }));
-    state.opts = opts;
-    state.open = true;
-    render();
+    return { bot: bot, opts: opts, data: d };
+  }
+
+  function delay(text) { return Math.min(1500, 450 + text.length * 9); }
+
+  return { step: step, mainOpts: mainOpts, greeting: greeting, delay: delay };
+})();
+
+(function () {
+  var root = document.getElementById('lume');
+  if (!root) return;
+  function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
+  function waLink(t) { return 'https://wa.me/5519991110483?text=' + encodeURIComponent(t); }
+  var reduce = false;
+  try { reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) {}
+  var state, timers = [];
+  function clearTimers() { timers.forEach(clearTimeout); timers = []; }
+  function fresh(open) {
+    clearTimers();
+    state = { open: open, data: {}, opts: LUME.mainOpts, typing: false,
+      log: LUME.greeting.map(function (t) { return { who: 'bot', text: t }; }) };
+  }
+  fresh(false);
+
+  function play(bot, opts) {
+    state.opts = []; state.typing = true; render();
+    var i = 0;
+    (function next() {
+      if (i >= bot.length) { state.typing = false; state.opts = opts; render(); return; }
+      var t = bot[i++];
+      timers.push(setTimeout(function () {
+        state.log.push({ who: 'bot', text: t });
+        state.typing = i < bot.length;
+        render();
+        next();
+      }, reduce ? 0 : LUME.delay(t)));
+    })();
+  }
+
+  function choose(o) {
+    if (o.act === 'restart') { fresh(true); render(); return; }
+    var r = LUME.step(state.data, o, waLink);
+    state.data = r.data;
+    state.log.push({ who: 'me', text: o.label });
+    play(r.bot, r.opts);
   }
 
   var bulb = '<svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="10.2" r="8.2" fill="#5AA2FF" opacity=".2"></circle><path d="M12 3.4a6.2 6.2 0 0 0-3.6 11.25c.66.48 1.05 1.25 1.05 2.07v.68h5.1v-.68c0-.82.39-1.59 1.05-2.07A6.2 6.2 0 0 0 12 3.4z" fill="#5AA2FF"></path><path d="M9.9 5.2a4.6 4.6 0 0 0-2.3 3" fill="none" stroke="#FFFFFF" stroke-opacity=".75" stroke-width="1" stroke-linecap="round"></path><path d="M12.95 6.4 9.9 11h2.15l-.85 3.5 3.05-4.75H12.1z" fill="#0A1220"></path><rect x="9.45" y="18.1" width="5.1" height="1.35" rx=".67" fill="#C9D6E5"></rect><rect x="10.2" y="20.05" width="3.6" height="1.25" rx=".62" fill="#C9D6E5"></rect><path d="M19.3 2.4l.45 1.25 1.25.45-1.25.45-.45 1.25-.45-1.25-1.25-.45 1.25-.45z" fill="#FFFFFF"></path></svg><span aria-hidden="true" style="position: absolute; right: -2px; bottom: -2px; width: 11px; height: 11px; border-radius: 50%; background: #25D366; border: 2px solid #0A1220"></span>';
@@ -1146,16 +1213,17 @@ button:focus-visible,a:focus-visible{outline:2px solid #5AA2FF;outline-offset:2p
     var h = '';
     if (state.open) {
       h += '<div class="lume-panel" role="dialog" aria-label="Assistente Lume">';
-      h += '<div class="lume-head"><div class="lume-av lume-av-lg">' + bulb + '</div><div style="flex:1;min-width:0"><div class="lume-name">Lume</div><div class="lume-sub">Assistente da Perform · responde na hora</div></div>';
+      h += '<div class="lume-head"><div class="lume-av lume-av-lg">' + bulb + '</div><div style="flex:1;min-width:0"><div class="lume-name">Lume</div><div class="lume-sub">Assistente virtual da Perform</div></div>';
       h += '<button type="button" class="lume-x" data-close aria-label="Fechar o assistente"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg></button></div>';
       h += '<div class="lume-body" id="lume-body" aria-live="polite">';
       state.log.forEach(function (m) { h += '<div class="lume-msg ' + (m.who === 'bot' ? 'lume-bot' : 'lume-me') + '">' + esc(m.text) + '</div>'; });
+      if (state.typing) h += '<div class="lume-msg lume-bot lume-typing" aria-label="Lume está digitando"><span></span><span></span><span></span></div>';
       h += '<div class="lume-opts">';
       state.opts.forEach(function (o, i) {
         if (o.href) h += '<a class="lume-wa" href="' + esc(o.href) + '" target="_blank" rel="noopener">' + chat + esc(o.label) + '</a>';
         else h += '<button type="button" class="lume-opt" data-i="' + i + '">' + esc(o.label) + '</button>';
       });
-      h += '</div></div><div class="lume-foot">Assistente automático · para falar com uma pessoa, use o WhatsApp</div></div>';
+      h += '</div></div><div class="lume-foot">Sou um assistente virtual. Pra falar com o Alan, é só chamar no WhatsApp.</div></div>';
     }
     h += '<button type="button" class="lume-launch" data-toggle aria-label="' + (state.open ? 'Fechar o assistente Lume' : 'Abrir o assistente Lume') + '"><span class="lume-av">' + bulb + '</span><span class="lume-launch-t">' + (state.open ? 'Fechar' : 'Dúvidas? Fale com o Lume') + '</span></button>';
     root.innerHTML = h;
@@ -1170,7 +1238,6 @@ button:focus-visible,a:focus-visible{outline:2px solid #5AA2FF;outline-offset:2p
     else if (t.hasAttribute('data-close')) { state.open = false; render(); }
     else if (t.hasAttribute('data-i')) { choose(state.opts[+t.getAttribute('data-i')]); }
   });
-
   render();
 })();
 
