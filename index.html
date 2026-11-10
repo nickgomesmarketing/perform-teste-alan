@@ -62,7 +62,26 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .top nav a:hover{opacity:1}
 .top.solid{background:rgba(247,246,242,.94);color:var(--ink);box-shadow:0 1px 0 var(--line);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
 body.solid{--hb:rgba(247,246,242,.94)}
-@media (max-width:900px){.top nav{display:none}.top .in{grid-template-columns:1fr auto}}
+@media (max-width:900px){.top nav{display:none}.top .in{grid-template-columns:1fr auto auto;gap:10px}}
+/* menu mobile */
+.burger{display:none;width:44px;height:44px;border-radius:50%;border:1px solid currentColor;background:transparent;color:inherit;padding:0;flex-direction:column;align-items:center;justify-content:center;gap:5px}
+.burger span{display:block;width:18px;height:1.5px;background:currentColor;border-radius:2px;transition:transform .35s var(--ease),opacity .2s}
+.burger[aria-expanded="true"] span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+.burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+.burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+@media (max-width:900px){.burger{display:flex}}
+@media (max-width:360px){.top .act svg{display:none}.top .pill{padding:9px 14px}}
+.mnav{position:fixed;inset:0;z-index:45;background:var(--green-deep);color:var(--on-green);display:flex;flex-direction:column;justify-content:center;gap:2px;
+  padding:calc(var(--head) + env(safe-area-inset-top,0px) + 24px) var(--gut-r) calc(40px + env(safe-area-inset-bottom,0px)) var(--gut-l);animation:mnIn .45s var(--ease) both}
+.mnav[hidden]{display:none}
+.mnav a{font:300 clamp(28px,8vw,38px)/1.2 var(--display);letter-spacing:-.01em;text-decoration:none;padding:12px 0;border-bottom:1px solid rgba(242,241,234,.12)}
+.mnav .pill{margin-top:28px;align-self:flex-start}
+@keyframes mnIn{from{opacity:0;transform:translateY(-14px)}to{opacity:1;transform:none}}
+body.menu-open .top{background:transparent;color:var(--on-green);box-shadow:none;backdrop-filter:none;-webkit-backdrop-filter:none}
+body.menu-open .top .pill{background:var(--on-green);color:var(--green-deep)}
+body.menu-open{--hb:var(--green-deep)}
+body.menu-open .cb-launch{display:none}
+@media (prefers-reduced-motion:reduce){.mnav{animation:none}.burger span{transition:none}}
 .pill{display:inline-flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;border-radius:999px;padding:13px 24px;font:600 13px var(--display);letter-spacing:.03em;white-space:nowrap;border:1px solid transparent;transition:transform .25s var(--ease),background .25s,color .25s}
 .pill:hover{transform:translateY(-2px)}
 .pill svg{width:16px;height:16px;fill:currentColor;flex:none}
@@ -310,8 +329,20 @@ h3{font-weight:500;font-size:20px;line-height:1.2;letter-spacing:-.01em}
       <a href="#linhas">Linhas</a><a href="#ambientes">Ambientes</a><a href="#acabamentos">Acabamentos</a><a href="#obras">Obras</a><a href="simulador.html" data-page>Simulador 3D</a>
     </nav>
     <a class="pill light act" data-calebe href="https://wa.me/5519900000000?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20M%C3%B3veis%20Fortes%20e%20quero%20um%20or%C3%A7amento." target="_blank" rel="noopener"><svg><use href="#wa"/></svg>Orçamento</a>
+    <button type="button" class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false" aria-controls="mnav"><span></span><span></span><span></span></button>
   </div>
 </header>
+
+<nav class="mnav" id="mnav" aria-label="Menu" hidden>
+  <a href="#linhas">Linhas</a>
+  <a href="#ambientes">Ambientes</a>
+  <a href="#acabamentos">Acabamentos</a>
+  <a href="#como-funciona">Como funciona</a>
+  <a href="#obras">Obras</a>
+  <a href="simulador.html" data-page>Simulador 3D</a>
+  <a href="#contato">Contato</a>
+  <button type="button" class="pill light" data-calebe>Falar com o Calebe</button>
+</nav>
 
 <main class="stack" id="stack">
 
@@ -577,6 +608,18 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener("click",
   e.preventDefault();
   lenis ? lenis.scrollTo(y, {duration:1.6}) : window.scrollTo({top:y, behavior:calmMotion?"auto":"smooth"});
 }));
+
+/* menu mobile */
+const burger=document.getElementById("burger"), mnav=document.getElementById("mnav");
+function setMenu(open){
+  mnav.hidden=!open; burger.setAttribute("aria-expanded",open); burger.setAttribute("aria-label",open?"Fechar menu":"Abrir menu");
+  document.body.classList.toggle("menu-open",open); document.documentElement.style.overflow=open?"hidden":"";
+  if(lenis){ open?lenis.stop():lenis.start(); }
+}
+burger.addEventListener("click",()=>setMenu(mnav.hidden));
+mnav.addEventListener("click",e=>{ if(e.target.closest("a,button")) setMenu(false); },true);
+document.addEventListener("keydown",e=>{ if(e.key==="Escape"&&!mnav.hidden){ setMenu(false); burger.focus(); } });
+matchMedia("(min-width: 901px)").addEventListener("change",e=>{ if(e.matches) setMenu(false); });
 
 /* troca de página com véu (o navegador usa View Transitions quando suporta) */
 const veil=document.getElementById("veil");
