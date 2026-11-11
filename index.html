@@ -548,11 +548,13 @@ h3{font-weight:500;font-size:20px;line-height:1.2;letter-spacing:-.01em}
 <script>
 /* acabamentos */
 const FIN = [
-  {n:"Carvalho",    c:"#B59A77", g:1, d:"Madeira clara, tom mel. Aquece o ambiente e combina com quase tudo.", lines:["Assinatura","Essencial"]},
-  {n:"Nogueira",    c:"#70513E", g:1, d:"Madeira escura e elegante. Ótima para painéis, ripados e contraste.", lines:["Assinatura","Essencial"]},
+  {n:"Carvalho",    c:"#B4926A", g:1, d:"Madeira clara, tom mel. Aquece o ambiente e combina com quase tudo.", lines:["Assinatura","Essencial"]},
+  {n:"Nogueira",    c:"#6F4A34", g:1, d:"Madeira escura e elegante. Ótima para painéis, ripados e contraste.", lines:["Assinatura","Essencial"]},
   {n:"Branco TX",   c:"#E7E4DA", g:0, d:"Branco texturizado, resistente a marcas. O clássico que nunca erra.", lines:["Assinatura","Essencial"]},
+  {n:"Cinza cristal", c:"#B7B9B6", g:0, d:"Cinza claro e neutro, o tom dos escritórios e closets das nossas obras.", lines:["Assinatura","Essencial"]},
+  {n:"Fendi",       c:"#B5A691", g:0, d:"Bege acinzentado e elegante. Aquece painéis e dormitórios sem pesar.", lines:["Assinatura","Essencial"]},
   {n:"Verde oliva", c:"#72765C", g:0, d:"Cor suave e atual, para cozinhas e quartos com personalidade.", lines:["Assinatura"]},
-  {n:"Grafite",     c:"#414643", g:0, d:"Cinza escuro e moderno. Contrasta bem com a madeira.", lines:["Assinatura","Essencial"]}
+  {n:"Grafite",     c:"#3C3F42", g:0, d:"Cinza escuro e moderno. Contrasta bem com a madeira.", lines:["Assinatura","Essencial"]}
 ];
 const chips = document.getElementById("chips");
 chips.innerHTML = FIN.map((f,i)=>`<button type="button" class="chip" data-i="${i}" aria-pressed="${i===0}"><i style="background:${f.c}"></i>${f.n}</button>`).join("");
